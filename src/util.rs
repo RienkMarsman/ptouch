@@ -105,8 +105,11 @@ pub enum Command {
 }
 
 fn main() -> anyhow::Result<()> {
+    println!("starting");
     // Parse CLI options
     let opts = Flags::from_args();
+    println!("starting");
+
 
     // Setup logging
     TermLogger::init(
@@ -124,6 +127,7 @@ fn main() -> anyhow::Result<()> {
     };
 
     debug!("Connecting to PTouch device: {:?}", opts.options);
+    println!("Connecting to PTouch device: {:?}", opts.options);
 
     // Attempt to connect to ptouch device to inform configuration
     let connect = match PTouch::new(&opts.options) {

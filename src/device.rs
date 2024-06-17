@@ -44,6 +44,8 @@ pub enum PTouchDevice {
     PtP710Bt = 0x20af,
     #[cfg_attr(feature = "strum", strum(serialize = "pt-d600"))]
     PtD600 = 0x2074,
+    #[cfg_attr(feature = "strum", strum(serialize = "ql-710w"))]
+    QL710W = 0x2043,
 }
 
 

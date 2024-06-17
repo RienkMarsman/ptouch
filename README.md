@@ -47,9 +47,8 @@ This needs cleaning up before it's _reasonable_ to use... for usage see [src/uti
 ### Examples
 
 ```
-ptouch-util --media tze24mm preview qr-text \
-'https://github.com/ryankurte/rust-ptouch' \
-'Rust PTouch Driver\n@ryankurte' --font=24x32`
+cargo run -- --media tze24mm preview qr-text 'https://portal.iotta.nl/' 'Rust' --font=24x32
+
 ```
 
 ![image](https://user-images.githubusercontent.com/860620/111896515-0c7e1000-8a7f-11eb-95e6-af5f7b18a1ae.png)

@@ -3,6 +3,7 @@
 // https://github.com/ryankurte/rust-ptouch
 // Copyright 2021 Ryan Kurte
 
+use std::net::{IpAddr, ToSocketAddrs};
 use std::time::Duration;
 
 use commands::Commands;
@@ -28,6 +29,7 @@ pub mod bitmap;
 pub mod tiff;
 
 pub mod render;
+pub mod snmp;
 
 /// PTouch device instance
 pub struct PTouch {
@@ -113,6 +115,9 @@ pub enum Error {
 
     #[error("PTouch Error ({:?} {:?})", 0, 1)]
     PTouch(Error1, Error2),
+
+    #[error("PTouch snmp error")]
+    SNMPError
 }
 
 impl From<std::io::Error> for Error {
